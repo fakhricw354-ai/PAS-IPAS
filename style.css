@@ -1,0 +1,143 @@
+:root{
+  --ink:#16313b; --paper:#f6f3ec; --card:#ffffff; --bone:#e9e1cf;
+  --muscle:#b8392f; --nerve:#1f6f8b; --ok:#2e7d4f; --bad:#b8392f; --line:#d9d2c0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,"Times New Roman",serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:17px}
+h1,h2,h3,nav button,.btn,.tag{font-family:"Trebuchet MS",Verdana,sans-serif}
+header{background:var(--ink);color:#fff;padding:14px 20px;position:sticky;top:0;z-index:10}
+header .brand{font-family:"Trebuchet MS",sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:8px}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav button{background:transparent;color:#d6e4e8;border:1.5px solid #4b6a75;border-radius:999px;padding:7px 16px;cursor:pointer;font-size:.9rem}
+nav button:hover{border-color:#fff;color:#fff}
+nav button.aktif{background:var(--bone);color:var(--ink);border-color:var(--bone);font-weight:700}
+nav button:focus-visible,.btn:focus-visible,.opsi:focus-visible{outline:3px solid var(--muscle);outline-offset:2px}
+main{max-width:980px;margin:0 auto;padding:28px 20px 60px}
+section{display:none}
+section.tampil{display:block;animation:masuk .35s ease}
+@keyframes masuk{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){section.tampil{animation:none}}
+h1{font-size:2.6rem;line-height:1.15;margin-bottom:12px}
+h2{font-size:1.8rem;margin-bottom:6px}
+h3{font-size:1.15rem;margin:18px 0 4px}
+p{margin-bottom:12px;max-width:70ch}
+.lead{font-size:1.15rem}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;margin-bottom:20px}
+.hero img{width:100%;border-radius:14px;display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+figure{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+figure img{width:100%;display:block;max-height:340px;object-fit:contain;background:#fff}
+figcaption{padding:10px 14px;font-size:.9rem;color:#4a5f66}
+ul{margin:0 0 12px 22px;max-width:70ch}
+li{margin-bottom:4px}
+.tag{display:inline-block;font-size:.8rem;padding:2px 10px;border-radius:999px;background:var(--bone);margin-right:6px}
+.btn{background:var(--muscle);color:#fff;border:none;border-radius:8px;padding:11px 22px;font-size:1rem;cursor:pointer;font-weight:700}
+.btn:hover{background:#9c2f27}
+.btn.alt{background:var(--nerve)}
+.btn.alt:hover{background:#17566c}
+.lanjut{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tabs button{border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:8px 14px;cursor:pointer;font-family:"Trebuchet MS",sans-serif;font-size:.9rem}
+.tabs button.aktif{background:var(--nerve);color:#fff;border-color:var(--nerve)}
+.panel{display:none}.panel.tampil{display:block}
+table{border-collapse:collapse;width:100%;background:#fff;margin:12px 0;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:var(--bone);font-family:"Trebuchet MS",sans-serif}
+.alur{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.alur span{background:var(--nerve);color:#fff;padding:6px 12px;border-radius:8px;font-family:"Trebuchet MS",sans-serif;font-size:.85rem}
+.alur i{font-style:normal;color:var(--muscle);font-weight:700}
+/* kuis */
+.opsi{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:11px 14px;margin:8px 0;cursor:pointer;font-size:1rem;font-family:inherit}
+.opsi:hover:not(:disabled){border-color:var(--nerve)}
+.opsi.benar{background:#e3f3e8;border-color:var(--ok)}
+.opsi.salah{background:#f9e3e0;border-color:var(--bad)}
+.bar{height:8px;background:var(--bone);border-radius:6px;overflow:hidden;margin-bottom:14px}
+.bar div{height:100%;background:var(--nerve);width:0;transition:width .3s}
+.umpan{margin-top:10px;padding:10px 14px;border-radius:8px;background:var(--bone);display:none}
+.skor{font-size:3rem;font-weight:700;font-family:"Trebuchet MS",sans-serif}
+@media (max-width:720px){.hero,.grid2{grid-template-columns:1fr}h1{font-size:2rem}}
+
+/* ===== Model 3D ===== */
+#m3wrap{--ink:#e9eef0;--dim:#9db0b8;--line:#2d434d;--muscle:#c4463a;--bone:#e8dfc8;--nerve:#f2c94c;position:relative;height:min(78vh,660px);min-height:480px;border-radius:14px;overflow:hidden;color:var(--ink);font-family:"Trebuchet MS",Verdana,sans-serif}
+#m3stage{position:absolute;inset:0;background:radial-gradient(ellipse at 62% 40%,#223640 0%,#0c1317 72%)}
+#m3stage canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+#m3stage canvas:active{cursor:grabbing}
+#m3panel{position:absolute;left:12px;top:12px;width:290px;max-height:calc(100% - 24px);overflow:auto;background:rgba(14,24,29,.88);border:1px solid var(--line);border-radius:12px;padding:14px}
+.m3modes{display:grid;gap:8px;margin-bottom:12px}
+.m3modes button{display:flex;align-items:center;gap:10px;text-align:left;background:#12222a;color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;font-size:.95rem;cursor:pointer;font-family:inherit}
+.m3modes button:hover{border-color:#6c8c99}
+.m3modes button.aktif{background:#e9eef0;color:#10202a;border-color:#e9eef0;font-weight:700}
+.m3dot{width:12px;height:12px;border-radius:50%;flex:none}
+.m3tools{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.m3tools button{background:transparent;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:.8rem;cursor:pointer;font-family:inherit}
+.m3tools button.on{color:#10202a;background:var(--dim);border-color:var(--dim)}
+.m3tools button:disabled{opacity:.35;cursor:not-allowed}
+#m3wrap button:focus-visible{outline:3px solid #7cc4dd;outline-offset:2px}
+#m3info h4{font-size:1rem;margin-bottom:6px;font-family:"Trebuchet MS",sans-serif}
+#m3info p{font-size:.86rem;color:#c3d0d5;line-height:1.5;margin-bottom:8px}
+#m3info ul{margin:0 0 6px 18px;font-size:.84rem;color:#c3d0d5;line-height:1.45}
+.m3hint{position:absolute;right:12px;bottom:10px;font-size:.78rem;color:var(--dim)}
+#m3err{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:30px;color:#fff}
+@media (max-width:760px){
+  #m3wrap{height:82vh}
+  #m3panel{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:46%;padding:10px}
+  .m3modes{grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:8px}
+  .m3modes button{padding:7px;font-size:.78rem;gap:6px}
+  .m3hint{display:none}
+}
+
+/* ===== Tambahan tampilan ===== */
+header{background:linear-gradient(120deg,#12303b 0%,#16313b 55%,#3a1f28 100%)}
+header .brand{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ikon{background:transparent;color:#d6e4e8;border:1.5px solid #4b6a75;border-radius:999px;padding:4px 12px;font-size:.78rem;cursor:pointer;font-family:"Trebuchet MS",sans-serif}
+.ikon:hover{color:#fff;border-color:#fff}
+nav{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:thin}
+nav button{white-space:nowrap}
+#progres{height:4px;background:#2d434d;border-radius:4px;margin-top:8px;overflow:hidden}
+#progres div{height:100%;width:0;background:linear-gradient(90deg,#f2c94c,#c4463a);transition:width .45s ease}
+h2{padding-bottom:8px;border-bottom:3px solid var(--bone);margin-bottom:14px}
+.card{box-shadow:0 1px 0 rgba(22,49,59,.05)}
+.btn.kecil{padding:8px 16px;font-size:.9rem}
+.btn:active{transform:translateY(1px)}
+.fakta{border-left:5px solid var(--nerve);margin-top:20px}
+.fakta p{margin:6px 0 10px}
+.kartu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:12px 0}
+.kartu{perspective:800px;height:130px;cursor:pointer;background:none;border:none;padding:0;font:inherit;color:inherit;text-align:left}
+.kartu-dalam{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.kartu.balik .kartu-dalam{transform:rotateY(180deg)}
+.kartu .sisi{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:14px;display:flex;align-items:center;justify-content:center;text-align:center}
+.kartu .depan{background:var(--ink);color:#fff;font-family:"Trebuchet MS",sans-serif;font-weight:700;font-size:1.1rem}
+.kartu .belakang{background:var(--card);border:2px solid var(--nerve);transform:rotateY(180deg);font-size:.9rem;line-height:1.45}
+.kartu:focus-visible{outline:3px solid var(--muscle);outline-offset:3px;border-radius:12px}
+.alur span{transition:background .25s,transform .25s}
+.alur span.nyala{background:var(--muscle);transform:scale(1.08)}
+.rt{user-select:none;border-radius:14px;padding:46px 20px;text-align:center;background:var(--ink);color:#fff;font-family:"Trebuchet MS",sans-serif;font-size:1.2rem;font-weight:700;cursor:pointer;max-width:560px}
+.rt.tunggu{background:#a8302a}
+.rt.go{background:#2e9d5b}
+.rt:focus-visible{outline:3px solid var(--nerve);outline-offset:3px}
+#rtOut{margin-top:10px}
+.waktu{font-family:"Trebuchet MS",sans-serif;color:#4a5f66;font-size:.9rem}
+.tinjau{margin-top:16px;text-align:left}
+.tinjau li{margin-bottom:10px}
+body{transition:background .3s,color .3s}
+/* tema gelap */
+body.gelap{--ink:#e6edf0;--paper:#0f191e;--card:#17262d;--bone:#26404a;--line:#2f464f}
+body.gelap table,body.gelap .opsi,body.gelap .tabs button{background:var(--card);color:var(--ink)}
+body.gelap .opsi.benar{background:#173a26}
+body.gelap .opsi.salah{background:#47201d}
+body.gelap th{color:var(--ink)}
+body.gelap figcaption,body.gelap .waktu{color:#9db0b8}
+body.gelap .kartu .depan{background:#26404a}
+body.gelap .btn.alt{background:#2a7d9c}
+body.gelap .rt{background:#26404a}
+body.gelap .tabs button.aktif{background:var(--nerve);color:#fff}
+@media print{header,.lanjut,#m3wrap{display:none}section{display:block!important;page-break-after:always}}
+@media (prefers-reduced-motion:reduce){.kartu-dalam,#progres div,.alur span{transition:none}}
+
+#m3tip{position:absolute;display:none;pointer-events:none;background:rgba(8,16,20,.92);color:#fff;border:1px solid #35e0ff;border-radius:6px;padding:4px 10px;font-size:.82rem;white-space:nowrap;z-index:3}
+.m3sel{background:#0e1c22;border:1px solid var(--line);border-left:4px solid #35e0ff;border-radius:8px;padding:10px 12px;margin-bottom:12px}
+.m3sel h4{font-size:.98rem;margin-bottom:4px;font-family:"Trebuchet MS",sans-serif}
+.m3sel p{font-size:.84rem;color:#c3d0d5;line-height:1.45;margin-bottom:4px}
+#m3layers button{padding:5px 10px}
+#m3layers button:disabled{opacity:.4}

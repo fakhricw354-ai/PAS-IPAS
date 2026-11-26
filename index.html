@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistem Gerak Manusia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand"><span>Sistem Gerak Manusia</span><button id="tema" class="ikon" aria-label="Ganti tema terang atau gelap">Mode gelap</button></div>
+  <nav id="menu">
+    <button data-tujuan="awal" class="aktif">Perkenalan</button>
+    <button data-tujuan="sistem">Sistem Gerak</button>
+    <button data-tujuan="sadar">Gerak Sadar</button>
+    <button data-tujuan="refleks">Gerak Refleks</button>
+    <button data-tujuan="penyakit">Penyakit</button>
+    <button data-tujuan="kuis">Kuis</button>
+  </nav>
+  <div id="progres" aria-hidden="true"><div></div></div>
+</header>
+
+<main>
+
+<!-- PERKENALAN -->
+<section id="awal" class="tampil">
+  <div class="hero">
+    <div>
+      <h1>Bagaimana tubuh kita bergerak?</h1>
+      <p class="lead">Saat kamu berjalan, menulis, atau menarik tangan dari benda panas, tulang, otot, sendi, dan saraf bekerja bersama. Materi ini membahas kerja sama itu.</p>
+      <p>Kamu akan mempelajari:</p>
+      <ul>
+        <li>Sistem gerak: tulang, sendi, dan otot</li>
+        <li>Gerak sadar: gerakan yang kita putuskan sendiri</li>
+        <li>Gerak refleks: gerakan cepat tanpa perintah otak</li>
+        <li>Penyakit dan gangguan pada sistem gerak</li>
+        <li>Kuis 12 soal untuk menguji pemahamanmu</li>
+      </ul>
+      <div class="card fakta"><b>Tahukah kamu?</b><p id="faktaTeks"></p><button class="btn alt kecil" id="faktaBtn">Fakta lain</button></div>
+      <div class="lanjut"><button class="btn" data-tujuan="sistem">Mulai belajar</button></div>
+    </div>
+    <img src="sistemsaraf.jpg" alt="Sel saraf (neuron) berwarna biru yang saling terhubung">
+  </div>
+</section>
+
+<!-- SISTEM GERAK -->
+<section id="sistem">
+  <h2>Sistem Gerak Manusia</h2>
+  <p>Sistem gerak terdiri dari <b>alat gerak pasif</b> (tulang) dan <b>alat gerak aktif</b> (otot). Sendi menghubungkan tulang, dan saraf memberi perintah kepada otot.</p>
+
+  <div class="grid2">
+    <figure>
+      <img src="merah.jpg" alt="Otot tubuh manusia tampak depan dan belakang">
+      <figcaption>Otot tubuh manusia dari depan dan belakang.</figcaption>
+    </figure>
+    <figure>
+      <img src="pelumas.jpg" alt="Penampang sendi dengan tulang rawan dan cairan sinovial">
+      <figcaption>Penampang sendi sinovial.</figcaption>
+    </figure>
+  </div>
+
+  <h3>Tulang (alat gerak pasif)</h3>
+  <ul>
+    <li>Menopang tubuh dan menentukan bentuknya</li>
+    <li>Melindungi organ lunak, misalnya tengkorak melindungi otak</li>
+    <li>Tempat melekatnya otot</li>
+    <li>Tempat pembentukan sel darah (sumsum tulang) dan penyimpan kalsium</li>
+  </ul>
+
+  <h3>Otot (alat gerak aktif)</h3>
+  <p>Otot dapat berkontraksi (memendek) dan relaksasi (memanjang). Ada tiga jenis:</p>
+  <table>
+    <tr><th>Jenis otot</th><th>Ciri</th><th>Contoh</th></tr>
+    <tr><td>Otot lurik (rangka)</td><td>Bergaris, bekerja sadar, cepat lelah</td><td>Otot lengan, paha</td></tr>
+    <tr><td>Otot polos</td><td>Tidak bergaris, bekerja tidak sadar</td><td>Dinding lambung, usus</td></tr>
+    <tr><td>Otot jantung</td><td>Bergaris dan bercabang, bekerja tidak sadar, tidak mudah lelah</td><td>Jantung</td></tr>
+  </table>
+
+  <h3>Sendi (hubungan antartulang)</h3>
+  <p>Pada gambar sendi, <b>tulang rawan</b> (articular cartilage) melapisi ujung tulang agar tidak aus. <b>Cairan sinovial</b> di dalam rongga sendi bekerja sebagai pelumas, dan <b>kapsul sendi</b> membungkus seluruh sendi. Contoh sendi: engsel (siku, lutut), putar (leher), peluru (bahu, pinggul).</p>
+
+  <h3>Kartu istilah</h3>
+  <p>Klik kartu untuk membalik dan melihat artinya.</p>
+  <div class="kartu-grid" id="kartuGrid"></div>
+
+  <div class="lanjut">
+    <button class="btn" data-tujuan="sadar">Lanjut: Gerak Sadar</button>
+  </div>
+</section>
+
+<!-- GERAK SADAR -->
+<section id="sadar">
+  <h2>Gerak Sadar</h2>
+  <p>Gerak sadar (gerak biasa) adalah gerakan yang kita lakukan dengan sengaja, dan dikendalikan oleh <b>otak</b>. Contohnya menulis, berjalan, mengangkat tangan, dan menendang bola.</p>
+
+  <div class="grid2">
+    <figure>
+      <img src="otakotak.jpg" alt="Bagian-bagian otak: lobus frontal, parietal, temporal, oksipital, serebelum">
+      <figcaption>Bagian-bagian otak.</figcaption>
+    </figure>
+    <figure>
+      <img src="sistemsaraf.jpg" alt="Neuron yang saling terhubung">
+      <figcaption>Neuron menghantarkan impuls saraf.</figcaption>
+    </figure>
+  </div>
+
+  <h3>Jalur gerak sadar</h3>
+  <div class="alur">
+    <span>Rangsang</span><i>›</i><span>Reseptor</span><i>›</i><span>Saraf sensorik</span><i>›</i><span>Otak</span><i>›</i><span>Saraf motorik</span><i>›</i><span>Otot (efektor)</span>
+  </div>
+
+  <h3>Bagian otak dan tugasnya</h3>
+  <ul>
+    <li><b>Lobus frontal:</b> berpikir, merencanakan, dan memulai gerakan</li>
+    <li><b>Lobus parietal:</b> menerima rasa sentuhan dan posisi tubuh</li>
+    <li><b>Lobus temporal:</b> pendengaran dan memori</li>
+    <li><b>Lobus oksipital:</b> penglihatan</li>
+    <li><b>Otak kecil (cerebellum):</b> keseimbangan dan koordinasi gerak</li>
+    <li><b>Batang otak (pons dan medula):</b> mengatur napas dan detak jantung</li>
+  </ul>
+
+  <div class="lanjut">
+    <button class="btn alt" data-tujuan="sistem">Sebelumnya</button>
+    <button class="btn" data-tujuan="refleks">Lanjut: Gerak Refleks</button>
+  </div>
+</section>
+
+<!-- GERAK REFLEKS -->
+<section id="refleks">
+  <h2>Gerak Refleks</h2>
+  <p>Gerak refleks adalah respons yang sangat cepat dan terjadi tanpa disadari. Impuls tidak harus sampai ke otak, cukup melewati <b>sumsum tulang belakang</b>. Contohnya menarik tangan saat menyentuh benda panas, berkedip, dan batuk.</p>
+
+  <figure>
+    <img src="images (2).jpg" alt="Diagram refleks panjang dan refleks pendek">
+    <figcaption>Refleks panjang (atas) dan refleks pendek (bawah).</figcaption>
+  </figure>
+
+  <h3>Busur refleks</h3>
+  <div class="alur">
+    <span>Rangsang</span><i>›</i><span>Reseptor</span><i>›</i><span>Saraf sensorik</span><i>›</i><span>Sumsum tulang belakang</span><i>›</i><span>Saraf motorik</span><i>›</i><span>Efektor</span>
+  </div>
+
+  <h3>Gerak sadar vs gerak refleks</h3>
+  <table>
+    <tr><th>Pembeda</th><th>Gerak sadar</th><th>Gerak refleks</th></tr>
+    <tr><td>Pusat pengendali</td><td>Otak</td><td>Sumsum tulang belakang</td></tr>
+    <tr><td>Kesadaran</td><td>Disadari</td><td>Tidak disadari</td></tr>
+    <tr><td>Kecepatan</td><td>Lebih lambat</td><td>Sangat cepat</td></tr>
+    <tr><td>Contoh</td><td>Menulis</td><td>Menarik tangan dari api</td></tr>
+  </table>
+
+  <h3>Simulasi: refleks atau gerak sadar?</h3>
+  <p>Bayangkan tanganmu menyentuh benda panas. Jalankan kedua jalur dan lihat perbedaannya.</p>
+  <div class="card">
+    <p style="margin-bottom:6px"><b>Gerak refleks</b></p>
+    <div class="alur" id="simRefleks"></div>
+    <p style="margin:12px 0 6px"><b>Gerak sadar</b></p>
+    <div class="alur" id="simSadar"></div>
+    <div class="lanjut" style="margin-top:12px">
+      <button class="btn kecil" id="jalanRefleks">Jalankan refleks</button>
+      <button class="btn alt kecil" id="jalanSadar">Jalankan gerak sadar</button>
+    </div>
+    <p id="simInfo" style="margin:10px 0 0">Tekan salah satu tombol untuk memulai.</p>
+  </div>
+
+  <h3>Uji waktu reaksi</h3>
+  <p>Klik kotak, tunggu sampai berubah hijau, lalu klik secepat mungkin. Ini gerak sadar: otak harus menerima rangsang dan memutuskan untuk bergerak.</p>
+  <div id="rtBox" class="rt" role="button" tabindex="0">Klik untuk mulai</div>
+  <p id="rtOut"></p>
+
+  <div class="lanjut">
+    <button class="btn alt" data-tujuan="sadar">Sebelumnya</button>
+    <button class="btn" data-tujuan="penyakit">Lanjut: Penyakit</button>
+  </div>
+</section>
+
+<!-- PENYAKIT -->
+<section id="penyakit">
+  <h2>Penyakit dan Gangguan Sistem Gerak</h2>
+  <p>Pilih salah satu gangguan untuk melihat gambar dan penjelasannya.</p>
+
+  <div class="tabs" id="tabPenyakit">
+    <button data-panel="p1" class="aktif">Skoliosis</button>
+    <button data-panel="p2">Kifosis</button>
+    <button data-panel="p3">Postur buruk</button>
+    <button data-panel="p4">Osteoporosis</button>
+    <button data-panel="p5">Parkinson</button>
+    <button data-panel="p6">ALS</button>
+  </div>
+
+  <div class="panel tampil" id="p1">
+    <div class="grid2">
+      <figure><img src="images (3).jpg" alt="Tulang belakang normal dan skoliosis"><figcaption>Normal (kiri) dan skoliosis (kanan).</figcaption></figure>
+      <div class="card">
+        <span class="tag">Tulang</span>
+        <h3>Skoliosis</h3>
+        <p>Tulang belakang melengkung ke samping, membentuk huruf C atau S jika dilihat dari belakang.</p>
+        <ul><li>Bahu atau pinggul tampak tidak sama tinggi</li><li>Sering muncul pada masa remaja</li><li>Penanganan: pemeriksaan dokter, terapi, penyangga, atau operasi pada kasus berat</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="p2">
+    <div class="grid2">
+      <figure><img src="images (4).jpg" alt="Kifosis: punggung membungkuk"><figcaption>Kifosis: punggung atas terlalu melengkung.</figcaption></figure>
+      <div class="card">
+        <span class="tag">Tulang</span>
+        <h3>Kifosis</h3>
+        <p>Tulang belakang bagian atas melengkung berlebihan ke depan sehingga punggung tampak bungkuk.</p>
+        <ul><li>Penyebab: kebiasaan duduk membungkuk, osteoporosis, atau kelainan bawaan</li><li>Pencegahan: duduk tegak dan olahraga penguat punggung</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="p3">
+    <div class="grid2">
+      <figure><img src="images (8).jpg" alt="Postur tulang belakang benar dan salah"><figcaption>Postur benar (✓) dan salah (✗).</figcaption></figure>
+      <div class="card">
+        <span class="tag">Tulang</span>
+        <h3>Kelainan akibat postur buruk</h3>
+        <p>Kebiasaan duduk, berdiri, atau membawa beban yang salah dapat mengubah lengkung tulang belakang. Lordosis adalah lengkung pinggang yang terlalu masuk ke depan.</p>
+        <ul><li>Duduk dengan punggung tegak</li><li>Bawa tas dengan kedua bahu</li><li>Istirahatkan mata dan badan dari layar setiap 30–60 menit</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="p4">
+    <div class="grid2">
+      <figure><img src="images (5).jpg" alt="Tulang sehat dan tulang osteoporosis"><figcaption>Tulang sehat (kiri) dan osteoporosis (kanan).</figcaption></figure>
+      <div class="card">
+        <span class="tag">Tulang</span>
+        <h3>Osteoporosis</h3>
+        <p>Tulang kehilangan massa dan kepadatan sehingga berongga dan mudah patah. Pada gambar, bagian dalam tulang osteoporosis terlihat jauh lebih berlubang.</p>
+        <ul><li>Lebih sering terjadi pada lansia</li><li>Pencegahan: cukup kalsium dan vitamin D, berjemur pagi, olahraga beban ringan</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="p5">
+    <div class="grid2">
+      <figure><img src="images (6).jpg" alt="Ilustrasi gejala penyakit saraf pada lansia"><figcaption>Gejala gangguan saraf: tremor, langkah terganggu, pusing, kesulitan berpikir.</figcaption></figure>
+      <div class="card">
+        <span class="tag">Saraf</span>
+        <h3>Parkinson</h3>
+        <p>Penyakit otak yang merusak sel penghasil dopamin sehingga gerakan terganggu.</p>
+        <ul><li>Tangan gemetar saat diam (tremor)</li><li>Gerakan lambat dan kaku</li><li>Langkah kecil dan keseimbangan terganggu</li><li>Belum dapat disembuhkan total, tetapi gejalanya dapat dikendalikan dengan pengobatan dan terapi</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="p6">
+    <div class="grid2">
+      <figure><img src="images (7).jpg" alt="Perbandingan sel saraf dan otot normal dengan ALS"><figcaption>Sel saraf dan otot normal (atas), ALS (bawah).</figcaption></figure>
+      <div class="card">
+        <span class="tag">Saraf dan otot</span>
+        <h3>ALS (Amyotrophic Lateral Sclerosis)</h3>
+        <p>Sel saraf motorik rusak sehingga tidak bisa mengirim perintah ke otot. Otot yang tidak mendapat perintah mengecil dan melemah (atrofi).</p>
+        <ul><li>Otot melemah dan mengecil</li><li>Kesulitan berjalan, berbicara, dan menelan</li><li>Penyakitnya progresif dan membutuhkan perawatan dokter</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <b>Catatan:</b> materi ini untuk belajar. Jika kamu atau keluarga mengalami gejala di atas, periksakan ke dokter.
+  </div>
+
+  <div class="lanjut">
+    <button class="btn alt" data-tujuan="refleks">Sebelumnya</button>
+    <button class="btn" data-tujuan="model3d">Lanjut: Model 3D</button>
+  </div>
+</section>
+
+
+
+<!-- KUIS -->
+<section id="kuis">
+  <h2>Kuis</h2>
+  <div id="kuisArea"></div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="model3d.js"></script>
+</body>
+</html>
